@@ -1,0 +1,31 @@
+#!/bin/bash
+echo "____File Manipulation____"
+echo "Enter source file name"
+read source
+echo "Enter destination file name"
+read destination
+if [ ! -f "$source" ]; then
+echo "Source file does not exist"
+exit 1
+fi
+cp "$source" "$destination"
+echo "File copied sucessfully"
+if cmp -s "$source" "$destination"; then
+echo "Both files are identical"
+else
+echo "Both file are not identical"
+fi
+echo
+echo "Enter a pattern to search"
+read pattern
+echo "matching lines are"
+grep -n "$pattern" "$destination"
+echo "matching lines are"
+grep -n "$pattern" "$destination"
+
+echo
+echo "---File Information---"
+echo "Sourve file: $source"
+echo "Destination file: $destination"
+echo "File type:"
+file "$destination"

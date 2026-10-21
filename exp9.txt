@@ -1,0 +1,13 @@
+#!/bin/bash
+echo "Files in Current Diredtory"
+echo "---------------------------"
+i=1
+for file in *
+do
+        if [ -f "$file" ]
+        then
+                date=$(stat -c "%y" "$file" | cut -d '.' -f1)
+                echo " $i . $file $date"
+                i=$((i+1))
+fi
+done

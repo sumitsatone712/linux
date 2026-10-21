@@ -1,0 +1,19 @@
+#!/bin/bash
+echo "-----------------------------"
+echo " System Information"
+echo "-----------------------------"
+echo -e "\n---1.Currently Logged-in User---"
+who
+echo "Total Logged-in user: $(who | wc -l)"
+echo -e "\n---2.File Listing(Current Diredtory)---"
+ls -la
+echo -e "\n---3. Top background process(by CPU/Memory)---"
+ps -ef | head -n 10
+echo -e "\n---4. Current shell job status---"
+jobs -l 2>/dev/null
+if [ $? -ne 0 ] || [ -z "$(jobs)" ]; then
+echo "No Active background jobs running in the current shell session."
+fi
+echo -e "\n----------------------"
+echo "   End od Report    "
+echo "------------------------"

@@ -1,0 +1,10 @@
+#!/bin/bash
+echo "Current Date:"
+date
+echo "Date in DD-MM-YYYY Format:"
+date +"%d-rm-%Y"
+echo "Date in DD/MM/YYYY Format:"
+date +"%d/%m/%Y"
+echo "Time:"
+date +"%H:%M:%S"
+echo "Script Execution Completed."
